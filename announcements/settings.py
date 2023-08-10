@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',  #статические файлы
     'bboard.apps.BboardConfig',
     'main.apps.MainConfig',  #добавляем пакет main
-    'bootstrap4',   #программное ядро библиотеки bootstrap4(начальная загрузка)
+    'bootstrap4',   #программное ядро библиотеки bootstrap4
 ]
 
 MIDDLEWARE = [    #посредник(обрабатывает ответ между клиентом и сервером)

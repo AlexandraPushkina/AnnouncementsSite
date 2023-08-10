@@ -7,16 +7,17 @@
         <meta charset="UTF-8">  <!--использование кириллицы -->
         <meta name="description" content = "Доска объявлений, посвещенная книгам"/>
         <meta name="keywords" content = "Объявления,купить, продать, обменять, книги"/>   <!--ключевые слова для поисковиков-->
-        <meta name="viewport" content = "width=device-width, initial-scale = 1, shrink-to-fit = no"/>
+        <meta name="viewport" content = "width=device-width, initial-scale = 1, shrink-to-fit = no"/>   <!--тег для правильной обработки страницы-->
         <meta name="author" content = "Alexandra Pushkina"/>   <!--информация об авторе -->
         <title>{% block title %}Главная{% endblock %} - Доска объявлений</title>
+        {% bootstrap_css %}   <!--таблица стилей -->
         <link rel = "stylesheet" type = "text/css"
         href="{% static 'main/style.css' %}"> <!--сообщает браузеру, где находится файл CSS , используемый для форматирования страницы-->
-        {% bootstrap_javascript jquery = 'slim' %}
+        {% bootstrap_javascript jquery='slim' %}
     </head>
-    <body class="container-fluid">  <!--указание групп элементов, объедененных в класс "container-fluid"-->
-        <header class ="mb-4">   <!--заголовок-->
-            <h1 class = "display-1 text-center">Объявления</h1>
+    <body class="container-fluid">  <!--указание групп элементов, объедененных в стилевой класс "container-fluid"-->
+        <header class ="mb-4">   <!--заголовок с большим внешним отступом снизу-->
+            <h1 class = "display-1 text-center">Объявления</h1>   <!--текст с большим шрифтом, выравненный по середине-->
         </header>
         <div class="row">   <!--макет для создания несколько рядов на странице-->
             <ul class="col nav justify-content-end border">  <!--неупорядоч. список с ссылками(nav)-->
@@ -55,12 +56,12 @@
             </nav>
             <section class="col border py-2">  <!--Группировка связанного контента-->
                 {% bootstrap_messages %}
-                {%b lock content %}
+                {% block content %}
                 {% endblock %}
             </section>
         </div>
         <footer class="mt-3">
-            <p class="text-right font-italic">copy;читатели.</p>
+            <p class="text-right font-italic">&copy;читатели.</p>
         </footer>
     </body>
 </html>
